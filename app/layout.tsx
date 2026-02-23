@@ -1,5 +1,7 @@
 import { cookies } from "next/headers";
 import { AppProviders } from "@/app/providers";
+import Header from "@/widgets/Header";
+import "@/app/globals.css";
 
 const LANG_COOKIE = "lang";
 const THEME_COOKIE = "theme";
@@ -18,7 +20,12 @@ export default async function RootLayout({
   return (
     <html lang={lang} className={themeClass === "dark" ? "dark" : ""}>
       <body>
-        <AppProviders lang={lang}>{children}</AppProviders>
+        <AppProviders lang={lang}>
+          <div className="bg-black">
+            <Header />
+            {children}
+          </div>
+        </AppProviders>
       </body>
     </html>
   );
