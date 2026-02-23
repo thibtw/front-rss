@@ -1,6 +1,16 @@
 export const headerNav = [
-  { labelKey: "nav.platforms", href: "/#platforms", name: "Platforms" },
-  { labelKey: "nav.features", href: "/#features", name: "Features" },
-  { labelKey: "nav.reviews", href: "/#reviews", name: "Reviews" },
-  { labelKey: "nav.demo", href: "/demo", name: "Demo" },
+  { labelKey: "nav.demo", name: "Demo", containerId: "demoContainer" },
+  {
+    labelKey: "nav.platforms",
+    name: "Platforms",
+    containerId: "platformContainer",
+  },
+  {
+    labelKey: "nav.features",
+    name: "Features",
+    containerId: "featuresContainer",
+  },
+  { labelKey: "nav.reviews", name: "Reviews", containerId: "reviewsContainer" },
 ] as const;
+
+export type ContainerId = (typeof headerNav)[number]["containerId"];

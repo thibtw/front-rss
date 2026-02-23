@@ -11,7 +11,7 @@ const mockups = Array.from({ length: 10 }, (_, i) => ({
 
 const DemoContainer: React.FC = () => {
   return (
-    <div className="w-full max-w-none px-4">
+    <div id="demoContainer" className="w-full max-w-none px-4 scroll-mt-[70px]">
       <div className="grid gap-4 [grid-template-columns:1fr_2fr_1fr_2fr]">
         {mockups.map(({ id, link }) => (
           <DemoGridItem key={id} link={link} />

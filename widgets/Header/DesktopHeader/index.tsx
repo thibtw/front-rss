@@ -1,7 +1,10 @@
+"use client";
+
 import React from "react";
 import Button from "@/shared/ui/Button";
 import Logo from "@/shared/ui/Logo";
 import { headerNav } from "@/widgets/Header/model/headerNav";
+import { scrollToId } from "@/shared/lib/utils/scrollToId";
 
 const DesktopHeader: React.FC = () => {
   return (
@@ -10,7 +13,15 @@ const DesktopHeader: React.FC = () => {
 
       <div className="justify-self-center flex flex-row gap-10">
         {headerNav.map((item) => {
-          return <div key={item.labelKey}>{item.name}</div>;
+          return (
+            <span
+              className="cursor-pointer hover:text-gray-300 transition-colors"
+              onClick={() => scrollToId(item.containerId)}
+              key={item.labelKey}
+            >
+              {item.name}
+            </span>
+          );
         })}
       </div>
 
