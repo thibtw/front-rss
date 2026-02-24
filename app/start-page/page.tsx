@@ -1,0 +1,22 @@
+import Button from "@/shared/ui/Button";
+import DemoContainer from "@/widgets/DemoContainer";
+
+export default function StartPage(): React.JSX.Element {
+  return (
+    <div>
+      <main className="flex flex-col items-center pt-30 pb-30 justify-center gap-8 bg-black text-white ">
+        <div className="text-5xl md:text-8xl font-jakarta content-center text-center justify-center font-medium">
+          Find the best
+          <br /> offers, faster
+        </div>
+        <div className="pl-10 pr-10 md:pl-0 md:pr-0 font-jakarta font-medium text-gray-400 max-w-100 text-center">
+          Discover opportunities from multiple platforms in one clean,
+          distraction-free space. All the best job listings from top platforms,
+          tailored to your goals.
+        </div>
+        <Button name="Start for free" />
+      </main>
+      <DemoContainer />
+    </div>
+  );
+}

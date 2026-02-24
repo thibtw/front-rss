@@ -6,18 +6,18 @@ import Button from "@/shared/ui/Button";
 import { headerNav, ContainerId } from "@/widgets/Header/model/headerNav";
 import { scrollToId } from "@/shared/lib/utils/scrollToId";
 
-const MobileHeader = () => {
+const MobileHeader: React.FC = () => {
   const [open, setOpen] = useState(false);
 
-  const toggleMenu = () => {
+  const toggleMenu = (): void => {
     setOpen(!open);
   };
 
-  const closeMenu = () => {
+  const closeMenu = (): void => {
     setOpen(false);
   };
 
-  const handleNavClick = (containerId: ContainerId) => {
+  const handleNavClick = (containerId: ContainerId): void => {
     scrollToId(containerId);
     closeMenu();
   };
@@ -49,7 +49,6 @@ const MobileHeader = () => {
         </button>
       </div>
 
-      {/* Mobile Menu */}
       <div
         className={`fixed top-[68px] min-h-full left-0 right-0 bottom-0 h-[calc(100dvh-68px)] z-40 bg-black/95 backdrop-blur-md transition-all duration-300 ease-in-out ${
           open
@@ -81,7 +80,6 @@ const MobileHeader = () => {
         </nav>
       </div>
 
-      {/* Overlay */}
       {open && (
         <div
           className="fixed inset-0 bg-black/50 z-30 top-[68px]"

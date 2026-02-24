@@ -1,8 +1,7 @@
 import { cookies } from "next/headers";
 import { AppProviders } from "@/app/providers";
 import "@/app/globals.css";
-import DesktopHeader from "../widgets/Header/DesktopHeader";
-import MobileHeader from "../widgets/Header/MobileHeader";
+import HeaderWrapper from "../widgets/Header/HeaderWrapper";
 
 const LANG_COOKIE = "lang";
 const THEME_COOKIE = "theme";
@@ -23,14 +22,7 @@ export default async function RootLayout({
       <body>
         <AppProviders lang={lang}>
           <div className="bg-black">
-            <>
-              <div className="md:hidden sticky top-0 z-50 backdrop-blur-md bg-black/40">
-                <MobileHeader />
-              </div>
-              <div className="hidden md:block sticky top-0 z-50 backdrop-blur-md bg-black/40">
-                <DesktopHeader />
-              </div>
-            </>
+            <HeaderWrapper />
 
             {children}
           </div>
