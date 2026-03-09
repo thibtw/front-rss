@@ -2,7 +2,6 @@
 
 import React from "react";
 import { usePathname } from "next/navigation";
-import { useRemoteConfig } from "@/shared/lib/hooks/useRemoteConfig";
 import DesktopHeader from "@/widgets/Header/DesktopHeader";
 import MobileHeader from "@/widgets/Header/MobileHeader";
 import HomeHeader from "@/widgets/Header/HomeHeader";
@@ -10,17 +9,6 @@ import HomeHeader from "@/widgets/Header/HomeHeader";
 const HeaderWrapper: React.FC = () => {
   const pathname = usePathname();
   const isHomePage = pathname.startsWith("/home");
-  const { ready, getBooleanFlag } = useRemoteConfig();
-
-  if (!ready) {
-    return null;
-  }
-
-  const showHeader = getBooleanFlag("header");
-
-  if (!showHeader) {
-    return null;
-  }
 
   if (isHomePage) {
     return (

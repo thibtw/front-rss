@@ -3,7 +3,6 @@
 import { useEffect } from "react";
 import i18n from "@/lib/i18n";
 import { I18nextProvider } from "react-i18next";
-import { initRemoteConfig } from "@/lib/firebase";
 
 export function AppProviders({
   children,
@@ -17,10 +16,6 @@ export function AppProviders({
       void i18n.changeLanguage(lang);
     }
   }, [lang]);
-
-  useEffect(() => {
-    void initRemoteConfig();
-  }, []);
 
   return <I18nextProvider i18n={i18n}>{children}</I18nextProvider>;
 }
